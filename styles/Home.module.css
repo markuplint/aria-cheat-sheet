@@ -3,7 +3,8 @@
   justify-content: space-between;
 }
 
-.header button {
+.header button,
+.header summary {
   appearance: none;
   padding: 0 10px;
   margin: 0;
@@ -11,6 +12,10 @@
   background: none;
   font-size: 4em;
   cursor: pointer;
+}
+
+.header summary::-webkit-details-marker {
+  display: none;
 }
 
 .tableContainer {
@@ -38,16 +43,4 @@
   top: 0;
   left: 0;
   z-index: 10;
-}
-
-td.allowed {
-  text-align: center;
-  color: #fff;
-  background: green;
-}
-
-td.disallowed {
-  text-align: center;
-  color: #fff;
-  background: darkred;
 }
