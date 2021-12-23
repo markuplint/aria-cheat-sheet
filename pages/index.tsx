@@ -63,11 +63,13 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
                   (r) => r.name === el.implicitRole.role
                 );
 
+                const name = el.name.replace(":", "|");
+
                 return (
                   <>
                     <tr key={`main-table-row-el${i}`}>
                       <th scope="row">
-                        <code>{el.name}</code>
+                        <code>{name}</code>
                         {deprecated && (
                           <em className="deprecated">Deprecated</em>
                         )}
@@ -102,47 +104,52 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
                       })}
                     </tr>
                     {el.implicitRole.conditions &&
-                      el.implicitRole.conditions.map((cond, j) => (
-                        <tr key={`main-table-row-el${i}-cond${j}`}>
-                          <th scope="row">
-                            <code>
-                              {el.name}
-                              {cond.condition}
-                            </code>
-                          </th>
-                          <td>
-                            {cond.role ? (
-                              <a
-                                href={`https://www.w3.org/TR/wai-aria-1.2/#${cond.role}`}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                <code>{cond.role}</code>
-                              </a>
-                            ) : (
-                              <>N/A</>
-                            )}
-                          </td>
-                          {ariaList.map((aria, k) => {
-                            const key = `main-table-row-el${i}-cond${j}-aria${k}`;
-                            const role = roleList.find(
-                              (r) => r.name === cond.role
-                            );
-                            if (role) {
-                              const allowed = role.ownedAttribute.find(
-                                (a) => a.name === aria.name
+                      el.implicitRole.conditions.map((cond, j) => {
+                        const name = el.name.replace(":", "|");
+                        const;
+
+                        return (
+                          <tr key={`main-table-row-el${i}-cond${j}`}>
+                            <th scope="row">
+                              <code>
+                                {name}
+                                {cond.condition}
+                              </code>
+                            </th>
+                            <td>
+                              {cond.role ? (
+                                <a
+                                  href={`https://www.w3.org/TR/wai-aria-1.2/#${cond.role}`}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                >
+                                  <code>{cond.role}</code>
+                                </a>
+                              ) : (
+                                <>N/A</>
+                              )}
+                            </td>
+                            {ariaList.map((aria, k) => {
+                              const key = `main-table-row-el${i}-cond${j}-aria${k}`;
+                              const role = roleList.find(
+                                (r) => r.name === cond.role
                               );
-                              if (allowed) {
-                                return <Allowed key={key} />;
+                              if (role) {
+                                const allowed = role.ownedAttribute.find(
+                                  (a) => a.name === aria.name
+                                );
+                                if (allowed) {
+                                  return <Allowed key={key} />;
+                                } else {
+                                  return <Disallowed key={key} />;
+                                }
                               } else {
-                                return <Disallowed key={key} />;
+                                return <Allowed key={key} />;
                               }
-                            } else {
-                              return <Allowed key={key} />;
-                            }
-                          })}
-                        </tr>
-                      ))}
+                            })}
+                          </tr>
+                        );
+                      })}
                   </>
                 );
               })}
