@@ -106,7 +106,6 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
                     {el.implicitRole.conditions &&
                       el.implicitRole.conditions.map((cond, j) => {
                         const name = el.name.replace(":", "|");
-                        const;
 
                         return (
                           <tr key={`main-table-row-el${i}-cond${j}`}>
