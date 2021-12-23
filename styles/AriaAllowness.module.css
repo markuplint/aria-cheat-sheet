@@ -1,0 +1,11 @@
+td.allowed {
+  text-align: center;
+  color: #fff;
+  background: green;
+}
+
+td.disallowed {
+  text-align: center;
+  color: #fff;
+  background: darkred;
+}

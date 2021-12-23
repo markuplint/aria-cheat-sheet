@@ -1,3 +1,18 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header button {
+  appearance: none;
+  padding: 0 10px;
+  margin: 0;
+  border: none;
+  background: none;
+  font-size: 4em;
+  cursor: pointer;
+}
+
 .tableContainer {
   width: 100%;
   overflow-x: scroll;
