@@ -46,7 +46,7 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
                 <th scope="col">Implicit Role</th>
                 {ariaList.map((aria, i) => (
                   <th key={`main-table-thead-aria${i}`} scope="col">
-                    {aria.name}
+                    <code>{aria.name}</code>
                   </th>
                 ))}
               </tr>
