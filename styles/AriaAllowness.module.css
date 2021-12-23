@@ -1,11 +1,11 @@
 td.allowed {
   text-align: center;
   color: #fff;
-  background: green;
+  background: green !important;
 }
 
 td.disallowed {
   text-align: center;
   color: #fff;
-  background: darkred;
+  background: darkred !important;
 }
