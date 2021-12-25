@@ -4,7 +4,7 @@ import Head from "next/head";
 import spec from "@markuplint/html-spec";
 
 import styles from "../styles/Home.module.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Data } from "../types";
 import AriaAllowness from "../components/AriaAllowness";
 import Settings from "../components/Settings";
@@ -63,8 +63,8 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
                   const name = el.name.replace(":", "|");
 
                   return (
-                    <>
-                      <tr key={`main-table-row-el${i}`}>
+                    <React.Fragment key={`main-table-row-el${i}`}>
+                      <tr>
                         <th scope="row">
                           <code>{name}</code>
                           {deprecated && (
@@ -135,7 +135,7 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
                             </tr>
                           );
                         })}
-                    </>
+                    </React.Fragment>
                   );
                 })}
               </tbody>
@@ -161,31 +161,29 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
               <tbody>
                 {roleList.map((role, i) => {
                   return (
-                    <>
-                      <tr key={`main-table-row-el${i}`}>
-                        <th scope="row">
-                          <a
-                            href={`https://www.w3.org/TR/wai-aria-1.2/#${role.name}`}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <code>{role.name}</code>
-                          </a>
-                          {role.isAbstract && <em>Abstract</em>}
-                        </th>
-                        {ariaList.map((aria, j) => {
-                          const key = `main-table-row-el${i}-aria${j}`;
-                          return (
-                            <AriaAllowness
-                              key={key}
-                              aria={aria}
-                              roleName={role.name}
-                              roleList={roleList}
-                            />
-                          );
-                        })}
-                      </tr>
-                    </>
+                    <tr key={`main-table-row-el${i}`}>
+                      <th scope="row">
+                        <a
+                          href={`https://www.w3.org/TR/wai-aria-1.2/#${role.name}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <code>{role.name}</code>
+                        </a>
+                        {role.isAbstract && <em>Abstract</em>}
+                      </th>
+                      {ariaList.map((aria, j) => {
+                        const key = `main-table-row-el${i}-aria${j}`;
+                        return (
+                          <AriaAllowness
+                            key={key}
+                            aria={aria}
+                            roleName={role.name}
+                            roleList={roleList}
+                          />
+                        );
+                      })}
+                    </tr>
                   );
                 })}
               </tbody>
