@@ -45,7 +45,9 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
 
       <main>
         <section>
-          <h2>Elements / ARIA props and states</h2>
+          <h2 id="el-aria">
+            <a href="#el-aria">Elements / ARIA props and states</a>
+          </h2>
 
           <div className={styles.tableContainer} tabIndex={0}>
             <table className={styles.table}>
@@ -152,7 +154,9 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
         </section>
 
         <section>
-          <h2>Roles / ARIA props and states</h2>
+          <h2 id="role-aria">
+            <a href="#role-aria">Roles / ARIA props and states</a>
+          </h2>
 
           <div className={styles.tableContainer} tabIndex={0}>
             <table className={styles.table}>
@@ -200,7 +204,9 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
         </section>
 
         <section>
-          <h2>Elements / Roles</h2>
+          <h2 id="el-role">
+            <a href="#el-role">Elements / Roles</a>
+          </h2>
 
           <div className={styles.tableContainer} tabIndex={0}>
             <table className={styles.table}>
