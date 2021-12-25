@@ -27,6 +27,8 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
           name="description"
           content="WAI-ARIA role and aria-* attribute cheat sheet powered by markuplit"
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/og.png" />
         <link rel="icon" href="/icon.png" />
       </Head>
 
