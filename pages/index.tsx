@@ -266,6 +266,19 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
                               </th>
                               {unAbsRoleList.map((role, k) => {
                                 const key = `main-table-row-el${i}-cond${j}-aria${k}`;
+
+                                const implicitRole =
+                                  el.implicitRole.conditions?.find(
+                                    (iCond) =>
+                                      iCond.condition === cond.condition
+                                  );
+                                if (
+                                  implicitRole &&
+                                  implicitRole.role === role.name
+                                ) {
+                                  return <Implicit key={key} />;
+                                }
+
                                 return isPermittedRole(
                                   role.name,
                                   cond.roles
