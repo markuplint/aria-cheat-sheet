@@ -4,6 +4,7 @@ export type Data = {
   ariaList: AriaList;
   roleList: RoleList;
   elements: typeof spec.specs;
+  version: string;
 };
 
 export type RoleList = typeof spec.def["#roles"];

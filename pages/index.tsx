@@ -14,7 +14,7 @@ import Allowed from "../components/Allowed";
 import Disallowed from "../components/Disallowed";
 import Implicit from "../components/Implicit";
 
-const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
+const Home: NextPage<Data> = ({ ariaList, roleList, elements, version }) => {
   const [showedDeprecated, showDeprecated] = useState(false);
 
   const unAbsRoleList = roleList.filter((role) => !role.isAbstract);
@@ -308,7 +308,8 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
 
       <footer>
         <p>
-          Powered by <a href="https://markuplint.dev">markuplint</a>
+          Powered by <a href="https://markuplint.dev">markuplint</a> (Ver.{" "}
+          {version})
         </p>
         <p>The spec according to WAI-ARIA 1.2 and ARIA in HTML</p>
       </footer>
@@ -317,11 +318,13 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements }) => {
 };
 
 export async function getStaticProps(): Promise<{ props: Data }> {
+  const version: string = require("@markuplint/html-spec/package.json").version;
   return {
     props: {
       elements: spec.specs,
       ariaList: spec.def["#ariaAttrs"],
       roleList: spec.def["#roles"],
+      version,
     },
   };
 }
