@@ -114,17 +114,17 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@markuplint/html-spec@^2.0.0-dev.20211213.2":
-  version "2.0.0-dev.20211213.2"
-  resolved "https://registry.yarnpkg.com/@markuplint/html-spec/-/html-spec-2.0.0-dev.20211213.2.tgz#0748f640e170d6990e195cbcc36e92ae73a2ddda"
-  integrity sha512-WUSey1KQ2W0GUutHCvFD0pII2dgG6iJPb4BTU2FBL2hI9VS5l9ske/V28EDstHnZQ2vg2oylAqO8YxNVyfvdXA==
+"@markuplint/html-spec@2.0.0-dev.20211227.0":
+  version "2.0.0-dev.20211227.0"
+  resolved "https://registry.yarnpkg.com/@markuplint/html-spec/-/html-spec-2.0.0-dev.20211227.0.tgz#201b5db621fdefe6eaf4b635c15f18118830491e"
+  integrity sha512-hDvDw+NsNkZUWRCW1700GbLM0uI3Ge/bWDnWefhqsGsa8+A4dic2S2aEXJRYwFlCEHo9+tUUxUJmDf5Di1aCCQ==
   dependencies:
-    "@markuplint/ml-spec" "2.0.0-dev.20211213.2"
+    "@markuplint/ml-spec" "2.0.0-dev.20211227.0"
 
-"@markuplint/ml-spec@2.0.0-dev.20211213.2":
-  version "2.0.0-dev.20211213.2"
-  resolved "https://registry.yarnpkg.com/@markuplint/ml-spec/-/ml-spec-2.0.0-dev.20211213.2.tgz#7de1ca4f2f2c87b04a5817bd897f8187bb1388d4"
-  integrity sha512-Oj+wcj5Filybj8tsv3Qg15sn4CSq+IydlHtTJfNnZuXKY0GXlqasXcxgXnnWD4yjtC6oaQMFomBKIyEHQQlvTg==
+"@markuplint/ml-spec@2.0.0-dev.20211227.0":
+  version "2.0.0-dev.20211227.0"
+  resolved "https://registry.yarnpkg.com/@markuplint/ml-spec/-/ml-spec-2.0.0-dev.20211227.0.tgz#45b0d00f06427a77d5604f16e4717098b638462f"
+  integrity sha512-eJrTWdMFNmqpdoMHzzqh6bUNNvvTpPkXqvC1i1HnwQIXVyZ0DAmjAjsyu7onFnG0jMDZpAqptwA4G7ABbQPrAQ==
   dependencies:
     tslib "^2.3.1"
 
