@@ -1,9 +1,17 @@
 import styles from "../styles/Implicit.module.css";
 
-const Implicit: React.FC = () => {
+const Implicit: React.FC<{ label?: string }> = ({ label }) => {
   return (
     <td className={styles.implicit}>
-      <span>Implicit</span>
+      <em>Implicit</em>
+      {label && (
+        <>
+          <br />
+          <strong>
+            Use the &quot;<em>{label}</em>&quot; attr
+          </strong>
+        </>
+      )}
     </td>
   );
 };

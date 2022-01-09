@@ -71,6 +71,7 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements, version }) => {
                   }
 
                   const name = el.name.replace(":", "|");
+                  const attrs = Object.keys(el.attributes);
 
                   return (
                     <React.Fragment key={`main-table-row-el${i}`}>
@@ -96,6 +97,22 @@ const Home: NextPage<Data> = ({ ariaList, roleList, elements, version }) => {
                         </td>
                         {ariaList.map((aria, j) => {
                           const key = `main-table-row-el${i}-aria${j}`;
+                          const implicitAttr = aria.equivalentHtmlAttrs?.find(
+                            (attr) =>
+                              attrs.some(
+                                (htmlAttr) => htmlAttr === attr.htmlAttrName
+                              )
+                          );
+
+                          if (implicitAttr) {
+                            return (
+                              <Implicit
+                                key={key}
+                                label={implicitAttr.htmlAttrName}
+                              />
+                            );
+                          }
+
                           return (
                             <AriaAllowness
                               key={key}
