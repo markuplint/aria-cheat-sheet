@@ -10,6 +10,15 @@ body {
   padding: 0 1em;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+  border-bottom: #ccc 1px solid;
+  padding: 1em 0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -32,4 +41,91 @@ code {
   height: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
+}
+
+section + section {
+  margin-top: 5em;
+}
+
+.table {
+  width: 100%;
+  overflow-x: scroll;
+  border: 1px solid #ccc;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+:is(th, td) {
+  text-align: left;
+  padding: 0.2em 0.5em;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+th:nth-child(1) {
+  width: 10%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+th ul {
+  margin: 0;
+  padding: 0;
+}
+
+th li {
+  display: block;
+  margin: 0 0 1em;
+}
+
+th li:last-child {
+  margin: 0;
+}
+
+th details {
+  font-weight: normal;
+}
+
+th details summary {
+  font-weight: bold;
+}
+
+thead th {
+  vertical-align: top;
+}
+
+thead th code {
+  white-space: nowrap;
+}
+
+th b {
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 0.6em;
+  background: #666;
+  color: #fff;
+  padding: 0 1em;
+  border-radius: 0.5em;
+}
+
+td:is(.✔, .⚠, .✘) {
+  text-align: center;
+  color: #fff;
+}
+
+td.✔ {
+  background: green !important;
+}
+
+td.⚠ {
+  background: rgb(172, 100, 13) !important;
+}
+
+td.✘ {
+  background: darkred !important;
 }
